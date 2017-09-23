@@ -6,3 +6,5 @@ machine git.heroku.com
   password $API_KEY
   login $USERNAME
 EOF
+
+yarn babel-node tools/run deploy
