@@ -11,17 +11,19 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     - g++-4.8
+cache: yarn
 script:
 - yarn lint
 - yarn test
+- yarn deploy
 notifications:
   slack:
     secure: mG60YrmiCsQa9ORyp1Lri40jgGp6m0Fhwfu12Z4Jo/ZZWE3jvPus59B4SzOqTQ7pzbglKvWz+IH82UpZHiVYpsnNQyG2brZ3/79iF9TjUIgufWzjvg9dX+n82mv00DNP+H2oMoQsrF8z5G0eE6M2v6L0DJMbaVMgG2W2Hv7ObQ0Qszf/cR2w0lOwdSpTmAvhnpmPayUx8qwCfMvF2CGp8MNBO52zNnsZjBJjDBnY1kf9t+ZaHSw0ENzimlx5TdJQPcUvO1aQMrmsbGbHrAeu7Rz6qpvMqUls/iJ4cZN5/9AYh4GICu4Fqhd6p0BmT6FXLN5AoVxnnQx1Yc4zGtc8gvHIZ1FZwpgYtRTJ90rKS5tCiwUumiCCCwa1EJ9ng0eTVuPJQwwkSoS6Zfa+ZkbqdlhGdR7WR1/9xcGshgQCjFz4MyU4pRAdnTrrSdNxBhzmK6DbdilEBSQqhLo/Xcf0p5thHSVbWNs6Du5/WlpG0SAT9h3GIuZttZ7VVzHwLJ2uVfDL53Qk+SOWjAn8h15aOKykoCVIB87NWs8rMynYGJZT85/KhBLteDivQSF5YzNWD5JoyFbpj5Gujn7ql62tJAo+9l5FN/CXE0nQoIl4HhMYol8aiHSPtU4lXwWxC0mDLDpvYA+T8lY5z6W2m+wHf3cYcAZ8g7I0xzDpOyQlQp0=
-deploy:
-  - provider: script
-    script: yarn deploy
-    on:
-      branch: feature1
+#deploy:
+ # - provider: script
+ #   script: yarn deploy
+ #   on:
+#      branch: feature1
 
 #deploy:
 #  script: scripts/deploy.sh
