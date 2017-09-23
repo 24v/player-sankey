@@ -4,7 +4,11 @@ node_js:
 - '7'
 - '6'
 env:
-- CXX=g++-4.8
+  matrix:
+  - CXX=g++-4.8
+  global:
+  - secure: srej3JcYC4uEpar5skVwi6+7Vd37VihN2+XX7GBXIe5MTWODH3+i22h6EDjK9ecW9e1ffcWAPWFTGxfKq184EpLC6QIagzeY9Qjx1QFwg4pZg2LchQpKydwJKjISITkAbjMuKuzxIefG3Q+8xxBmFxV2cLwozLeTepJaDbY4ZVl+82gqKrI5+EUaSncTq0JJHlA53FL5oEFp1GaBsUS0bQrisKd8KFresy4TWwKrs/tJ5MUayB09/gH4Ai4civlJvwguRTdQ9q4IPstjrDoFK9hWBgH9Z1/78bYWwfOuwhAu0yBTxMauwJC4E/EvN4y+olA1lPqBkrhEuzeXfneUEMv5aX2QU4ftfqhCbod3EnBBkjXdDr/DJmObcoTBlFmrWtLacn374EIxH5MrbECQ7ZCHUK/EjTnzSmjazCNI58zrWR7VCsHnesBIdRBB4QmXvcL3H20irljXQdUpknwaCJh4CltyrsxX1NFLzFg2OHFOfjIWoBUJJcU+wEQyEvWqmykEElY/PBFOe2qRukTMqCVjedNpzormr5EYVVlchNUTzOEnQ2GNNunvFqNayjYqJ93GYpYyDloA9kHvzWWGPsW1+I54u1nEQPgtGzPB5wCrNmm7DE2QbzQyQoR4fhzxTmHbT0HOVUUK8cKA3Nta7oEwd2iWEQSA2FDfO50cxFI=
+  - secure: YQEY12i8KQ5rz9WT4DRbg/QRy1yZ3brChHLjY80uPEpiRAJz5P125GPjn/N4lAWmozY/7xJnk8oB5JFBnGaUOK+F4oNjIT83vHZ7SDMuwwTvIWW3qhUAwkzdhCeu4FvUtszwx8DHiPSLb8lyOPpnhVIi5X+iukSm7AJ4UWULFVdNDN904FutEF//Oaal2y48gx5yh2C717onnjO/sYAAqatgCnuQ7cp0ywnTTCPTD9tILl4Xm6edtHxr7qj0NGmUlQS9kYdw1qslHdfktaG7+E0Cv+6bC/s5gYw0wCmtto2Fv3pgFVgrX93zb81glNTiThKRUSWHd7O4bka3/ONfcp00FyxxapKDJMctXs2L8SbGVBZI+CFRT2iWgvD9Xq4LPxOiFt4ezJ2jAQJfMfFl5bADnOEHdu2zScuZSbXxFL9MLG/oL3qXgBd9bKB9SCmjiwS0+PMGSCRbn6sCXQ6DRh4ONEXWw8j92n6C9J8Kl32PZjAzrW3xTtqoRsjqG6bAcvj9RASBhiAW1BdUKHKvaeN+0V1mDXAdmf43sl6sPyrOSxUQopZbprtiJGCNbAUK3KWl1DgYCYJwLD3rhsgZrXoYQQmeZaL7E0br8o5PWBFMDeXgt1BRBWYxwtpF/XdyUmthSpyKI3gBaDnKETf2AECbrn8bwgHZWJwk07SXnmY=
 addons:
   apt:
     sources:
@@ -19,16 +23,3 @@ script:
 notifications:
   slack:
     secure: mG60YrmiCsQa9ORyp1Lri40jgGp6m0Fhwfu12Z4Jo/ZZWE3jvPus59B4SzOqTQ7pzbglKvWz+IH82UpZHiVYpsnNQyG2brZ3/79iF9TjUIgufWzjvg9dX+n82mv00DNP+H2oMoQsrF8z5G0eE6M2v6L0DJMbaVMgG2W2Hv7ObQ0Qszf/cR2w0lOwdSpTmAvhnpmPayUx8qwCfMvF2CGp8MNBO52zNnsZjBJjDBnY1kf9t+ZaHSw0ENzimlx5TdJQPcUvO1aQMrmsbGbHrAeu7Rz6qpvMqUls/iJ4cZN5/9AYh4GICu4Fqhd6p0BmT6FXLN5AoVxnnQx1Yc4zGtc8gvHIZ1FZwpgYtRTJ90rKS5tCiwUumiCCCwa1EJ9ng0eTVuPJQwwkSoS6Zfa+ZkbqdlhGdR7WR1/9xcGshgQCjFz4MyU4pRAdnTrrSdNxBhzmK6DbdilEBSQqhLo/Xcf0p5thHSVbWNs6Du5/WlpG0SAT9h3GIuZttZ7VVzHwLJ2uVfDL53Qk+SOWjAn8h15aOKykoCVIB87NWs8rMynYGJZT85/KhBLteDivQSF5YzNWD5JoyFbpj5Gujn7ql62tJAo+9l5FN/CXE0nQoIl4HhMYol8aiHSPtU4lXwWxC0mDLDpvYA+T8lY5z6W2m+wHf3cYcAZ8g7I0xzDpOyQlQp0=
-#deploy:
- # - provider: script
- #   script: yarn deploy
- #   on:
-#      branch: feature1
-
-#deploy:
-#  script: scripts/deploy.sh
-#  provider: scripts
-#  api_key:
-#  app:
-#    feature1: player-sankey
-
